@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getDrivers()">
+    
+    <div id="root">
+    </div>
+    
+    <div>
+        <form onsubmit="return false;" method="Post">
+            <label for="Name">Drivers Name</label>
+            <input type="text" name="Name" id="Name"/>
+            <label for="Id">Drivers ID</label>
+            <input type="number" name="Id" id="Id"/>
+            <label for="">Drivers Rating</label>
+            <input type="number" name="Rating" id="Rating"/>
+            <label for="DateHired">Date Hired</label>
+            <input type="datetime-local" name="DateHired" id="DateHired"/>
+            <label for="Deleted">Deleted</label>
+            <input type="text" name="Deleted" id="Deleted"/>
+            <input type="submit" value="submit" onclick="postDriver()">
+        </form>
+    </div>
+    <script type="text/javascript" src="Scripts/index.js" ></script>
+</body>
+</html>
