@@ -50,7 +50,7 @@ namespace api.Models
             using var cmd = new MySqlCommand();
 
             cmd.CommandText = @"DELETE drivers set Name = @Name, Rating = @Rating, DateHired = @DateHired, Deleted = @Deleted WHERE id = @ID";
-            cmd.Parameters.RemoveAt(value.Id);
+            cmd.Parameters.Remove(value.Id);
             cmd.Parameters.Remove(value.Name);
             cmd.Parameters.Remove(value.Rating);
             cmd.Parameters.Remove(value.DateHired);

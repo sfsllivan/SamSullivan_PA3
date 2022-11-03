@@ -92,3 +92,62 @@ function postDriver(){
         getDrivers();
     })
 }
+
+function PutDriver(){
+    const postDriversApiUrl = "https://localhost:7181/api/drivers";
+    const DriverID = document.getElementById("Id").value;
+    const DriverName = document.getElementById("Name").value;
+    const DriverRating = document.getElementById("Rating").value;
+    const DriverDateHired = document.getElementById("DateHired").value;
+    const DriverDeleted = document.getElementById("Deleted").value;
+
+    fetch(postDriversApiUrl, {
+        method: "Put",
+        headers: {
+            "Accept": 'application/json',
+            "Context-Type" : 'application/json'
+        },
+        body: JSON.stringify({
+            Name: DriverName,
+            Id: DriverID,
+            Rating: DriverRating,
+            DateHired: DriverDateHired,
+            Deleted: DriverDeleted
+
+        })
+    })
+    .then((response)=>{
+        console.log(response);
+        getDrivers();
+    })
+}
+
+function DeleteDriver(){
+    const postDriversApiUrl = "https://localhost:7181/api/drivers";
+    const DriverID = document.getElementById("Id").value;
+    const DriverName = document.getElementById("Name").value;
+    const DriverRating = document.getElementById("Rating").value;
+    const DriverDateHired = document.getElementById("DateHired").value;
+    const DriverDeleted = document.getElementById("Deleted").value;
+
+    fetch(postDriversApiUrl, {
+        method: "Delete",
+        headers: {
+            "Accept": 'application/json',
+            "Context-Type" : 'application/json'
+        },
+        body: JSON.stringify({
+            Name: DriverName,
+            Id: DriverID,
+            Rating: DriverRating,
+            DateHired: DriverDateHired,
+            Deleted: DriverDeleted
+
+        })
+    })
+    .then((response)=>{
+        console.log(response);
+        getDrivers();
+    })
+}
+
